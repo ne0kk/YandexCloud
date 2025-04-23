@@ -11,7 +11,7 @@ resource "yandex_lb_network_load_balancer" "balance_lamp" {
   }
 
   attached_target_group {
-    target_group_id = yandex_compute_instance_group.lamp-group.load_balancer.0.target_group_id
+    target_group_id = yandex_compute_instance_group.public.load_balancer.0.target_group_id
 
     healthcheck {
       name = "http"
