@@ -26,7 +26,7 @@ resource "yandex_compute_instance_group" "public" {
     }
   }
 
-  metadata = local.metadata_pub
+  metadata = local.metadata_user_data
 
 
   scheduling_policy { preemptible = true }
@@ -35,6 +35,33 @@ resource "yandex_compute_instance_group" "public" {
     subnet_id = yandex_vpc_subnet.public.id
     nat       = var.vm_resource.public.nat
     ip_address = var.nat-instance-ip
+  }
+
+ scheduling_policy {
+      preemptible = true
+    }
+  }
+  scale_policy {
+    fixed_scale {
+      size = 3
+    }
+  }
+
+   allocation_policy {
+     zones = ["ru-central1-a"]
+   }
+
+  deploy_policy {
+    max_unavailable = 1
+    max_expansion   = 0
+  }
+
+  health_check {
+    interval = 30
+    timeout  = 10
+    tcp_options {
+      port = 80
+    }
   }
 
   load_balancer {
