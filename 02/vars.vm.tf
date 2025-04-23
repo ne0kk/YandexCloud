@@ -1,6 +1,6 @@
 #Блок образа Nat
 variable "vm_web_name_image_public" {
-  default     = "fd827b91d99psvq5fjit"
+  default     = "lamp-1579613975"
   #description = "VPC network NAT subnet name"
 }
 
