@@ -40,7 +40,7 @@ resource "yandex_compute_instance_group" "public" {
  scheduling_policy {
       preemptible = true
     }
-  }
+  
   scale_policy {
     fixed_scale {
       size = 3
