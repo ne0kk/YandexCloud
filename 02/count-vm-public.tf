@@ -7,7 +7,7 @@ resource "yandex_compute_instance_group" "public" {
   #depends_on = "" #[yandex_compute_instance.bastion]
   service_account_id  = var.sa_id
 
-  platform_id = var.vm_resource.public.platform
+
   
   instance_template {
     platform_id = var.vm_resource.public.platform
@@ -32,7 +32,7 @@ resource "yandex_compute_instance_group" "public" {
   scheduling_policy { preemptible = true }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.public.id
+    subnet_ids = yandex_vpc_subnet.public.id
     nat       = var.vm_resource.public.nat
     ip_address = var.nat-instance-ip
   }
