@@ -36,7 +36,7 @@ resource "yandex_compute_instance_group" "public" {
     nat       = var.vm_resource.public.nat
     ip_address = var.nat-instance-ip
   }
-
+}
  
   scale_policy {
     fixed_scale {
