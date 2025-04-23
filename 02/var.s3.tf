@@ -18,7 +18,7 @@ variable "source_file" {
 
 variable "role_sa" {
   type        = string
-  default = "storage.editor"
+  default = "editor"
   description = "image"
 }
 
