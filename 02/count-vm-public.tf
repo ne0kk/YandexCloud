@@ -3,7 +3,7 @@ data "yandex_compute_image" "ubuntu-public" {
   family = var.vm_web_name_image_public
 }
 
-resource "yandex_compute_instance" "public" {
+resource "yandex_compute_instance_group" "public" {
   #depends_on = "" #[yandex_compute_instance.bastion]
 
   count = var.count_iterrator_public
