@@ -17,11 +17,11 @@ variable "public_subnet_name" {
  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
-variable "private_subnet_name" {
-  type        = string
-  default     = "private"
- description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
-}
+#variable "private_subnet_name" {
+#  type        = string
+#  default     = "private"
+# description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+#}
 
 
 variable "public_cidr" {
@@ -30,11 +30,11 @@ variable "public_cidr" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
-variable "private_cidr" {
-  type        = list(string)
-  default     = ["192.168.20.0/24"]
-  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
-}
+#variable "private_cidr" {
+#  type        = list(string)
+#  default     = ["192.168.20.0/24"]
+#  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+#}
 
 variable "nat-instance-ip" {
   type        = string
