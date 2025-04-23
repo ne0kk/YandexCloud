@@ -17,7 +17,7 @@ resource "yandex_compute_instance_group" "public" {
   boot_disk {
     mode = "READ_WRITE"
     initialize_params {
-      image_id = var.
+      image_id = var.vm_web_name_image_public
       type     = var.vm_resource.public.disk_type
       size     = var.vm_resource.public.disk_size
     }
