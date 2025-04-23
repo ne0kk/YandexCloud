@@ -1,14 +1,11 @@
-resource "yandex_iam_service_account" "sa_bucket" {
-  folder_id = var.folder_id
-  name      = "sa-bucket"
-}
+
 
 // Назначение роли сервисному аккаунту
 resource "yandex_resourcemanager_folder_iam_member" "storage_editor" {
   folder_id = var.folder_id
   role      = var.role_sa
-  member    = "serviceAccount:${yandex_iam_service_account.sa_bucket.id}"
-  depends_on = [yandex_iam_service_account.sa_bucket]
+  member    = "serviceAccount:${var.sa_id}"
+
 }
 
 // Создание статического ключа доступа
