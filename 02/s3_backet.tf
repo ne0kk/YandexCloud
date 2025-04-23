@@ -31,7 +31,7 @@ resource "yandex_storage_object" "cat-picture" {
   access_key = yandex_iam_service_account_static_access_key.sa_static_key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa_static_key.secret_key
   bucket = var.bucket_homework_name
-  key    = "tree"
+  key    = "images"
   source = var.source_file
   acl = var.acl_bucket_homework_name
   depends_on = [yandex_storage_bucket.s3backet]
