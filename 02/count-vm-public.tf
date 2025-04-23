@@ -29,7 +29,7 @@ resource "yandex_compute_instance_group" "public" {
   scheduling_policy { preemptible = true }
 
   network_interface {
-    subnet_ids = yandex_vpc_subnet.public.id
+    subnet_ids = ["${yandex_vpc_subnet.public.id}"]
     nat       = var.vm_resource.public.nat
     ip_address = var.nat-instance-ip
   }
