@@ -39,19 +39,31 @@
 
 ### Ответ
 1. Создадим все необходимые манифесты для выполнения ДЗ
+2. 
 [balance.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/balance.tf)
+
 [count-vm-public.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/count-vm-public.tf)
+
 [local.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/local.tf)
+
 [main.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/main.tf)
+
 [outputs.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/outputs.tf)
+
 [providers.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/providers.tf)
+
 [s3_backet.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/s3_backet.tf)
+
 [var.s3.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/var.s3.tf)
+
 [vars.network.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/vars.network.tf)
+
 [vars.providers.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/vars.providers.tf)
+
 [vars.vm.tf](https://github.com/ne0kk/YandexCloud/blob/main/02/vars.vm.tf)  
 
-2. Запустим создание ресурсов
+
+4. Запустим создание ресурсов
    
 ![image](https://github.com/user-attachments/assets/6c6b5970-4678-4f78-85ee-fb64bf0ef664)
 
