@@ -38,4 +38,4 @@
 - [Группа ВМ с сетевым балансировщиком](https://cloud.yandex.ru/docs/compute/operations/instance-groups/create-with-balancer).
 
 ### Ответ
-1. 
+1. 2
