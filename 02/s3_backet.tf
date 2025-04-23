@@ -1,7 +1,4 @@
-resource "yandex_iam_service_account" "sa_bucket" {
-  folder_id = var.folder_id
-  name      = "sa-bucket"
-}
+
 
 // Назначение роли сервисному аккаунту
 resource "yandex_resourcemanager_folder_iam_member" "storage_editor" {
