@@ -41,8 +41,3 @@ variable "nat-instance-ip" {
   default     = "192.168.10.254"
 }
 
-variable "bucket_homework_name" {
-  type        = string
-  default = "homework-s3"
-  description = "Имя бакета s3"
-}
