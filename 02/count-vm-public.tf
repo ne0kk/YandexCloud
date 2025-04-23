@@ -6,19 +6,19 @@ data "yandex_compute_image" "ubuntu-public" {
 resource "yandex_compute_instance_group" "public" {
   #depends_on = "" #[yandex_compute_instance.bastion]
   service_account_id  = var.sa_id
-  count = var.count_iterrator_public
 
-  name        = "${var.vm_resource.public.vm_name}-0${count.index+1}" #Имя ВМ в облачной консоли
-  hostname    = "${var.vm_resource.public.vm_name}-0${count.index+1}" #формирует FDQN имя хоста, без hostname будет сгенрировано случаное имя.
   platform_id = var.vm_resource.public.platform
-
-  resources {
+  
+  instance_template {
+    platform_id = var.vm_resource.public.platform
+    resources {
     cores         = var.vm_resource.public.cpu
     memory        = var.vm_resource.public.ram
     core_fraction = var.vm_resource.public.core_fraction
   }
 
   boot_disk {
+    mode = "READ_WRITE"
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu-public.image_id
       type     = var.vm_resource.public.disk_type
@@ -37,10 +37,7 @@ resource "yandex_compute_instance_group" "public" {
     ip_address = var.nat-instance-ip
   }
 
- scheduling_policy {
-      preemptible = true
-    }
-  
+ 
   scale_policy {
     fixed_scale {
       size = 3
