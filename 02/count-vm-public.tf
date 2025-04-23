@@ -17,7 +17,7 @@ resource "yandex_compute_instance_group" "public" {
   boot_disk {
     mode = "READ_WRITE"
     initialize_params {
-      image_id = data.yandex_compute_image.ubuntu-public.image_id
+      image_id = var.
       type     = var.vm_resource.public.disk_type
       size     = var.vm_resource.public.disk_size
     }
