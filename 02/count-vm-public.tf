@@ -37,7 +37,7 @@ resource "yandex_compute_instance_group" "public" {
  
   scale_policy {
     fixed_scale {
-      size = 3
+      size = 1
     }
   }
 
