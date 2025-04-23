@@ -12,7 +12,7 @@ variable "acl_bucket_homework_name" {
 
 variable "source_file" {
   type        = string
-  default = "./image.jpg"
+  default = "./images.jpg"
   description = "image"
 }
 
