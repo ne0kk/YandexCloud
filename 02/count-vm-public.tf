@@ -5,7 +5,7 @@ data "yandex_compute_image" "ubuntu-public" {
 
 resource "yandex_compute_instance_group" "public" {
   #depends_on = "" #[yandex_compute_instance.bastion]
-
+  service_account_id  = var.sa_id
   count = var.count_iterrator_public
 
   name        = "${var.vm_resource.public.vm_name}-0${count.index+1}" #Имя ВМ в облачной консоли
