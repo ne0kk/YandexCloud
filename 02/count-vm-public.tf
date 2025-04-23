@@ -36,4 +36,9 @@ resource "yandex_compute_instance" "public" {
     nat       = var.vm_resource.public.nat
     ip_address = var.nat-instance-ip
   }
+
+  load_balancer {
+    target_group_name        = "target-group-lamp"
+    target_group_description = "load balancer target group lamp"
+  }
 }
