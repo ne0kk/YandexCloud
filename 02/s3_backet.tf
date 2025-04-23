@@ -3,7 +3,7 @@
 // Назначение роли сервисному аккаунту
 resource "yandex_resourcemanager_folder_iam_member" "storage_editor" {
   folder_id = var.folder_id
-  role      = var.role_sa
+
   member    = "serviceAccount:${var.sa_id}"
 
 }
