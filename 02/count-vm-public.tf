@@ -23,7 +23,7 @@ resource "yandex_compute_instance_group" "public" {
     }
   }
 
-    metadata =  local.metadata_user_data
+    metadata =  local.user_data
 
   scheduling_policy { preemptible = true }
 
