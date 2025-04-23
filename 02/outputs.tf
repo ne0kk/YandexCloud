@@ -1,7 +1,7 @@
 
 output "public" {
   value = tomap({
-    for inst in yandex_compute_instance.public : inst.name => {
+    for inst in yandex_compute_instance_group.public : inst.name => {
       name                = inst.name
       id                  = inst.id
       fqdn                = inst.fqdn
