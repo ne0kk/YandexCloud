@@ -1,13 +1,5 @@
 
 
-// Назначение роли сервисному аккаунту
-resource "yandex_resourcemanager_folder_iam_member" "storage_editor" {
-  folder_id = var.folder_id
-
-  member    = "serviceAccount:${var.sa_id}"
-
-}
-
 // Создание статического ключа доступа
 resource "yandex_iam_service_account_static_access_key" "sa_static_key" {
   service_account_id = var.sa_id
