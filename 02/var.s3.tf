@@ -1,41 +1,24 @@
-resource "yandex_iam_service_account" "sa_bucket" {
-  folder_id = var.yandex_folder_id
-  name      = "sa-bucket"
+variable "bucket_homework_name" {
+  type        = string
+  default = "homework-s3"
+  description = "Имя бакета s3"
 }
 
-// Назначение роли сервисному аккаунту
-resource "yandex_resourcemanager_folder_iam_member" "storage_editor" {
-  folder_id = var.yandex_folder_id
-  role      = "storage.editor"
-  member    = "serviceAccount:${yandex_iam_service_account.sa_bucket.id}"
-  depends_on = [yandex_iam_service_account.sa_bucket]
+variable "acl_bucket_homework_name" {
+  type        = string
+  default = "public-read"
+  description = "ACL "
 }
 
-// Создание статического ключа доступа
-resource "yandex_iam_service_account_static_access_key" "sa_static_key" {
-  service_account_id = yandex_iam_service_account.sa_bucket.id
-  description        = "static access key for object storage"
+variable "source_file" {
+  type        = string
+  default = "./image.jpg"
+  description = "image"
 }
 
-// Создание бакета с использованием ключа
-resource "yandex_storage_bucket" "s3backet2" {
-  access_key = yandex_iam_service_account_static_access_key.sa_static_key.access_key
-  secret_key = yandex_iam_service_account_static_access_key.sa_static_key.secret_key
-  bucket = var.bucket_name
-  acl    = "public-read"
-  
-  website {
-    index_document = "index.html"
-    error_document = "error.html"
-  }
+variable "role_sa" {
+  type        = string
+  default = "storage.editor"
+  description = "image"
 }
 
-resource "yandex_storage_object" "cat-picture" {
-  access_key = yandex_iam_service_account_static_access_key.sa_static_key.access_key
-  secret_key = yandex_iam_service_account_static_access_key.sa_static_key.secret_key
-  bucket = var.bucket_name
-  key    = "tree"
-  source = "./tree.jpg"
-  acl = "public-read"
-  depends_on = [yandex_storage_bucket.s3backet2]
-}
