@@ -23,7 +23,15 @@ resource "yandex_compute_instance_group" "public" {
     }
   }
 
-  metadata =  local.user_data
+metadata = {
+    ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
+    serial-port-enable = "1"
+    user-data  = <<EOF
+#!/bin/bash
+cd /var/www/html
+echo '<html><head><title>Cat</title></head> <body><h1>Hello!</h1><img src="http://s3bucket2.website.yandexcloud.net/cat"/></body></html>' > index.html
+EOF
+    }
 
   scheduling_policy { preemptible = true }
 
