@@ -36,7 +36,7 @@ metadata = local.user_data
  
   scale_policy {
     fixed_scale {
-      size = 1
+      size = 3
     }
   }
 
