@@ -10,7 +10,7 @@ resource "yandex_resourcemanager_folder_iam_member" "storage_editor" {
 
 // Создание статического ключа доступа
 resource "yandex_iam_service_account_static_access_key" "sa_static_key" {
-  service_account_id = yandex_iam_service_account.sa_bucket.id
+  service_account_id = var.sa_id
   description        = "static access key for object storage"
 }
 
