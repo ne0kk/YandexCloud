@@ -5,7 +5,7 @@ locals{
     metadata_priv = {
         ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
     }
-    metadata_user_data = {
+    user_data = {
     ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
     serial-port-enable = "1"
     user-data  = <<EOF
