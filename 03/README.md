@@ -23,3 +23,5 @@
 
 ### Ответ
 1. Создадим все необходимые манифесты. 
+
+![image](https://github.com/user-attachments/assets/1533397d-be3a-4df4-a5e7-686479e2d495)
