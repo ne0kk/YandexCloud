@@ -56,7 +56,9 @@
 
 Проверим доступность балансировщика
 ![image](https://github.com/user-attachments/assets/fbe6e87c-27d2-4c9c-9fb5-bf529bee2f9b)
+
 ![image](https://github.com/user-attachments/assets/cafc260e-ea43-45dc-9236-4fe28e0d18dd)
+
 Картинка не доступна. 
 
 Проверим шифрование 
