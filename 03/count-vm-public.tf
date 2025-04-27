@@ -1,8 +1,6 @@
-
-
 resource "yandex_compute_instance_group" "public" {
   #depends_on = "" #[yandex_compute_instance.bastion]
-  service_account_id  = var.sa_id
+  service_account_id  = "${yandex_iam_service_account.sa-bucket.id}"
 
 
   

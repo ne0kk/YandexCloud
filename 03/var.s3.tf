@@ -22,3 +22,8 @@ variable "role_sa" {
   description = "image"
 }
 
+###cloud vars
+variable "sa_name" {
+  type        = string
+  default = "sa-backet"
+}
